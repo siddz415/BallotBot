@@ -1,5 +1,5 @@
-# Ballotbot
-This project is a chatbot powered by LlamaIndex and a Large Language Model (LLM), designed to answer queries and provide insights related to Project 2025. The chatbot can handle structured and unstructured data, making it a useful tool for managing and interacting with the project's knowledge base.
+# BallotBot
+This project is a chatbot powered by LlamaIndex (formerly GPT Index) and a Large Language Model (LLM), designed to answer queries and provide insights related to Project 2025. The chatbot can handle structured and unstructured data, making it a useful tool for managing and interacting with the project's knowledge base.
 
 # Features
 Efficient Query Handling: Use LlamaIndex to quickly search through large datasets related to Project 2025.
