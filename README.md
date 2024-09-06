@@ -8,34 +8,37 @@ Real-Time Updates: Automatically update the chatbot's knowledge base as new data
 File Structure
 bash
 Copy code
-/BallotBot
+/Ballotbot
 │
 ├── /data
-│   ├── project_info.json       # Structured data related to Project 2025 (e.g., tasks, timelines)
-│   └── knowledge_base.txt      # Unstructured data like project documents
+│   └── sample_data.json         # Sample data for initial MongoDB population
 │
 ├── /models
-│   └── llm_model.py            # Code to load and interact with the LLM (e.g., LLaMA or GPT)
+│   ├── llm_model.py             # LLM model for processing queries
+│   ├── mongo_model.py           # MongoDB schema models (using Pydantic)
 │
 ├── /index
-│   └── index_builder.py        # Script to build and update the LlamaIndex
+│   └── index_builder.py         # Script to build the LlamaIndex
 │
 ├── /app
-│   ├── chatbot.py              # Main chatbot logic
-│   ├── query_handler.py        # Handles user queries and fetches data from LlamaIndex
-│   └── app.py                  # Entry point (FastAPI/Flask)
+│   ├── chatbot.py               # Main chatbot logic
+│   ├── query_handler.py         # Handles user queries
+│   ├── db.py                    # MongoDB connection and operations
+│   ├── routes.py                # API endpoints (query, health, etc.)
+│   └── app.py                   # FastAPI app entry point
 │
 ├── /tests
-│   ├── test_chatbot.py         # Unit tests for chatbot
-│   ├── test_index.py           # Tests for index-building
-│   └── test_query_handler.py   # Tests for query handling
+│   ├── test_chatbot.py          # Unit tests for chatbot
+│   ├── test_index.py            # Tests for LlamaIndex building
+│   └── test_db.py               # Tests for MongoDB interactions
 │
 ├── /config
-│   └── settings.py             # Configuration settings (e.g., API keys)
+│   └── settings.py              # MongoDB connection settings
 │
-├── requirements.txt            # Python dependencies
-├── README.md                   # Documentation for setup and usage
-└── .gitignore                  # Files to ignore in version control
+├── requirements.txt             # Python dependencies
+├── README.md                    # Documentation
+└── .gitignore                   # Files to ignore in version control
+
 Getting Started
 Prerequisites
 Make sure you have Python 3.8+ installed on your system. Install the following dependencies:
