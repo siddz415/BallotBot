@@ -1,1 +1,0 @@
-  # MongoDB connection and other settings
