@@ -11,33 +11,33 @@ Copy code
 /Ballotbot
 │
 ├── /data
-│   └── sample_data.json         # Sample data for initial MongoDB population
+│   └── sample_data.json         # Data used for building indexes and retrieval
 │
 ├── /models
 │   ├── llm_model.py             # LLM model for processing queries
-│   ├── mongo_model.py           # MongoDB schema models (using Pydantic)
+│   ├── mongo_model.py           # MongoDB schema models
+│   ├── rag_model.py             # RAG implementation for query processing
 │
 ├── /index
-│   └── index_builder.py         # Script to build the LlamaIndex
+│   └── index_builder.py         # LlamaIndex logic for data indexing and retrieval
 │
 ├── /app
 │   ├── chatbot.py               # Main chatbot logic
-│   ├── query_handler.py         # Handles user queries
-│   ├── db.py                    # MongoDB connection and operations
-│   ├── routes.py                # API endpoints (query, health, etc.)
-│   └── app.py                   # FastAPI app entry point
+│   ├── query_handler.py         # Handles queries, combines retrieval and generation
+│   ├── db.py                    # MongoDB connection
+│   ├── routes.py                # FastAPI routes (API endpoints)
+│   └── app.py                   # FastAPI entry point
 │
 ├── /tests
-│   ├── test_chatbot.py          # Unit tests for chatbot
-│   ├── test_index.py            # Tests for LlamaIndex building
-│   └── test_db.py               # Tests for MongoDB interactions
+│   ├── test_chatbot.py          # Tests for chatbot
+│   ├── test_rag.py              # Tests for RAG retrieval and response generation
 │
 ├── /config
-│   └── settings.py              # MongoDB connection settings
+│   └── settings.py              # MongoDB connection and other settings
 │
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # Documentation
-└── .gitignore                   # Files to ignore in version control
+└── .gitignore                   # Ignore unneeded files in version control
 
 Getting Started
 Prerequisites
