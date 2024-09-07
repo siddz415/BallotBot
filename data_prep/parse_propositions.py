@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from llama_parse import LlamaParse
-from llama_index.core import Document
 from pymongo import MongoClient
 
 # Load environment variables from .env file
